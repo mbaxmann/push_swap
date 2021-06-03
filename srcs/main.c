@@ -3,7 +3,6 @@
 int	main(int ac, char **av)
 {
 	int *stack_A;
-	//int *stack_B;
 
 	if (ac < 2)
 		return (0);
@@ -15,6 +14,7 @@ int	main(int ac, char **av)
 	else if ((int)(stack_A = ft_ps_init(av)) > 1)
 	{
 		write(1, "success\n", 8);
+		ft_algo(stack_A);
 		return (0);
 	}
 	else if (stack_A == 0)

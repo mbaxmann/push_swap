@@ -54,6 +54,27 @@ void	ft_get_num(int	*ret, char *str)
 	}
 }
 
+int	ft_check_double(int *tab)
+{
+	int i;
+	int j;
+
+	i = 1;
+	j = i + 1;
+	while (i <= tab[0])
+	{
+		while (j <= tab[0])
+		{
+			if (tab[i] == tab[j])
+				return (1);
+			j++;
+		}
+		i++;
+		j = i + 1;
+	}
+	return (0);
+}
+
 int	*ft_ps_init(char **av)
 {
 	int	*ret;
@@ -68,6 +89,11 @@ int	*ft_ps_init(char **av)
 		ret = (int *)malloc(sizeof(int) * (len + 1));
 		ret[0] = len;
 		ft_get_num(ret, av[1]);
+		if (ft_check_double(ret))
+		{
+			free(ret);
+			ret = NULL;
+		}
 	}
 	return (ret);	
 }
