@@ -17,12 +17,13 @@ void	ft_pa(int *stack_A, int *stack_B)
 		while (i < stack_B[0])
 		{
 			stack_B[i] = stack_B[i + 1];
-			i--;
+			i++;
 		}
 		stack_A[0]++;
 		stack_B[0]--;
 	}
 	write(1, "pa\n", 3);
+	count_ope++;
 }
 
 void	ft_pb(int *stack_A, int *stack_B)
@@ -48,6 +49,7 @@ void	ft_pb(int *stack_A, int *stack_B)
 		stack_A[0]--;
 	}
 	write(1, "pb\n", 3);
+	count_ope++;
 }
 
 void	ft_ra(int *stack_A, int *stack_B)
@@ -68,6 +70,7 @@ void	ft_ra(int *stack_A, int *stack_B)
 		stack_A[j] = i;
 	}
 	write(1, "ra\n", 3);
+	count_ope++;
 }
 
 void	ft_rb(int *stack_A, int *stack_B)
@@ -88,5 +91,6 @@ void	ft_rb(int *stack_A, int *stack_B)
 		stack_B[j] = i;
 	}
 	write(1, "rb\n", 3);
+	count_ope++;
 }
 

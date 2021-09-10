@@ -6,15 +6,32 @@
 #include <stdio.h>
 #include "../libft/libft.h"
 
-enum	ope { SA, SB, SS, PA, PB, RA, RB, RR, RRA, RRB, RRR};
+extern int count_ope;
 
-int	*ft_ps_init(char **av);
-int	ft_check_c(char *str);
-int	ft_get_len(char *str);
+typedef struct	s_num
+{
+	int	value;
+	int	pos;
+}	t_num;
+
+int	*ft_ps_init(int ac, char **av);
+int	ft_check_c(int ac, char **str);
+int	ft_get_len(int ac, char **str);
 int	ft_check_double(int *tab);
-void	ft_get_num(int	*ret, char *str);
+int	ft_issort(int *stack_A);
+int	ft_find_first(t_num *pack, int *stack_A, int chunk);
+int	ft_posrel(int l, int i);
+int	ft_get_num(int	*ret, int ac, char **str);
 void	ft_algo(int *stack_A);
-void	ft_set_operator(void (*tab[11])(int *, int *));
+void	ft_sort(int *stack_A, int *stack_B);
+void	ft_sort_big(int *stack_A, int *stack_B);
+void	ft_get_biggest(int *stack_A, t_num *pack, int chunk);
+void	ft_push_pack(int *stack_A, int *stack_B, t_num *pack, int chunk);
+void	ft_update_pos(int *stack_A, t_num *pack, int chunk);
+void	ft_case_3(int *stack_A, int *stack_B);
+void	ft_sort_3(int *stack_A, int *stack_B);
+void	ft_insert(int *stack_A, int *stack_B);
+void	ft_smallest_attop(int *stack_A, int *stack_B, t_num *pack);
 void	ft_sa(int *stack_A, int * stack_B);
 void    ft_sb(int *stack_A, int * stack_B);
 void    ft_ss(int *stack_A, int * stack_B);
@@ -27,4 +44,13 @@ void    ft_rra(int *stack_A, int * stack_B);
 void    ft_rrb(int *stack_A, int * stack_B);
 void    ft_rrr(int *stack_A, int * stack_B);
 
+void	ft_swap(int *stack_A, int *stack_B, int *smaller, int *i);
+int	ft_sortt(int *stack_A, int *stack_B, int low, int high);
+void    ft_quicksort(int *stack_A, int *stack_B);
+void	ft_quick(int *stack_A, int *stack_B);
+void	ft_push_to_a(int *stack_A, int *stack_B);
+int	ft_find_biggest(int *stack);
+int	ft_isbiggest(int *stack_A, int nb);
+
+void	ft_test(int *stack_A, int *stack_B);
 #endif

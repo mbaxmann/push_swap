@@ -12,6 +12,7 @@ void	ft_sa(int *stack_A, int *stack_B)
 		stack_A[2] = i;
 	}
 	write(1, "sa\n", 3);
+	count_ope++;
 }
 
 void    ft_sb(int *stack_A, int *stack_B)
@@ -26,6 +27,7 @@ void    ft_sb(int *stack_A, int *stack_B)
 		stack_B[2] = i;
 	}
 	write(1, "sb\n", 3);
+	count_ope++;
 }
 
 void	ft_ss(int *stack_A, int *stack_B)
@@ -45,19 +47,5 @@ void	ft_ss(int *stack_A, int *stack_B)
 		stack_A[2] = i;
 	}
 	write(1, "ss\n", 3);
-}
-
-void	ft_set_operator(void (*tab[11])(int *, int *))
-{
-	tab[0] = ft_sa;
-	tab[1] = ft_sb;
-	tab[2] = ft_ss;
-	tab[3] = ft_pa;
-	tab[4] = ft_pb;
-	tab[5] = ft_ra;
-	tab[6] = ft_rb;
-	tab[7] = ft_rr;
-	tab[8] = ft_rra;
-	tab[9] = ft_rrb;
-	tab[10] = ft_rrr;
+	count_ope++;
 }

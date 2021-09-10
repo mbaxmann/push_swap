@@ -1,6 +1,6 @@
 OBJS    =       ${SRCS:.c=.o}
 
-SRCS	=	srcs/main.c srcs/ft_init.c srcs/ft_algo.c srcs/ft_set_operator.c srcs/ft_set_operator_2.c srcs/ft_set_operator_3.c
+SRCS	=	srcs/main.c srcs/ft_init.c srcs/ft_algo.c srcs/ft_set_operator.c srcs/ft_set_operator_2.c srcs/ft_set_operator_3.c srcs/ft_algo_2.c srcs/ft_quicksort.c
 
 CC      =       clang
 

@@ -28,6 +28,7 @@ void	ft_rr(int *stack_A, int *stack_B)
 		stack_B[j] = i;
 	}
 	write(1, "rr\n", 3);
+	count_ope++;
 }
 
 void	ft_rra(int *stack_A, int *stack_B)
@@ -48,6 +49,7 @@ void	ft_rra(int *stack_A, int *stack_B)
 		stack_A[1] = i;
 	}
 	write(1, "rra\n", 4);
+	count_ope++;
 }
 
 void	ft_rrb(int *stack_A, int *stack_B)
@@ -68,6 +70,7 @@ void	ft_rrb(int *stack_A, int *stack_B)
 		stack_B[1] = i;
 	}
 	write(1, "rrb\n", 4);
+	count_ope++;
 }
 
 void	ft_rrr(int *stack_A, int *stack_B)
@@ -98,4 +101,5 @@ void	ft_rrr(int *stack_A, int *stack_B)
 		stack_B[j] = i;
 	}
 	write(1, "rrr\n", 4);
+	count_ope++;
 }
