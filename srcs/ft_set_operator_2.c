@@ -1,96 +1,103 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_set_operator_2.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbaxmann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/13 15:50:35 by mbaxmann          #+#    #+#             */
+/*   Updated: 2021/09/13 15:55:45 by mbaxmann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
-void	ft_pa(int *stack_A, int *stack_B)
+void	ft_pa(int *stack_a, int *stack_b)
 {
 	int	i;
 
-	i = stack_A[0];
-	if (stack_B[0])
+	i = stack_a[0];
+	if (stack_b[0])
 	{
 		while (i)
 		{
-			stack_A[i + 1] = stack_A[i];
+			stack_a[i + 1] = stack_a[i];
 			i--;
 		}
-		stack_A[1] = stack_B[1];
+		stack_a[1] = stack_b[1];
 		i = 1;
-		while (i < stack_B[0])
+		while (i < stack_b[0])
 		{
-			stack_B[i] = stack_B[i + 1];
+			stack_b[i] = stack_b[i + 1];
 			i++;
 		}
-		stack_A[0]++;
-		stack_B[0]--;
+		stack_a[0]++;
+		stack_b[0]--;
 	}
 	write(1, "pa\n", 3);
-	count_ope++;
 }
 
-void	ft_pb(int *stack_A, int *stack_B)
+void	ft_pb(int *stack_a, int *stack_b)
 {
 	int	i;
 
-	i = stack_B[0];
-	if (stack_A[0])
+	i = stack_b[0];
+	if (stack_a[0])
 	{
 		while (i)
 		{
-			stack_B[i + 1] = stack_B[i];
+			stack_b[i + 1] = stack_b[i];
 			i--;
 		}
-		stack_B[1] = stack_A[1];
+		stack_b[1] = stack_a[1];
 		i = 1;
-		while (i < stack_A[0])
+		while (i < stack_a[0])
 		{
-			stack_A[i] = stack_A[i + 1];
+			stack_a[i] = stack_a[i + 1];
 			i++;
 		}
-		stack_B[0]++;
-		stack_A[0]--;
+		stack_b[0]++;
+		stack_a[0]--;
 	}
 	write(1, "pb\n", 3);
-	count_ope++;
 }
 
-void	ft_ra(int *stack_A, int *stack_B)
+void	ft_ra(int *stack_a, int *stack_b)
 {
 	int	i;
 	int	j;
 
 	j = 1;
-	stack_B[0] = stack_B[0];
-	if (stack_A[0])
+	stack_b[0] = stack_b[0];
+	if (stack_a[0])
 	{
-		i = stack_A[1];
-		while (j < stack_A[0])
+		i = stack_a[1];
+		while (j < stack_a[0])
 		{
-			stack_A[j] = stack_A[j + 1];
+			stack_a[j] = stack_a[j + 1];
 			j++;
 		}
-		stack_A[j] = i;
+		stack_a[j] = i;
 	}
 	write(1, "ra\n", 3);
-	count_ope++;
 }
 
-void	ft_rb(int *stack_A, int *stack_B)
+void	ft_rb(int *stack_a, int *stack_b)
 {
-	int     i;
-	int     j;
+	int	i;
+	int	j;
 
 	j = 1;
-	stack_A[0] = stack_A[0];
-	if (stack_B[0])
+	stack_a[0] = stack_a[0];
+	if (stack_b[0])
 	{
-		i = stack_B[1];
-		while (j < stack_B[0])
+		i = stack_b[1];
+		while (j < stack_b[0])
 		{
-			stack_B[j] = stack_B[j + 1];
+			stack_b[j] = stack_b[j + 1];
 			j++;
 		}
-		stack_B[j] = i;
+		stack_b[j] = i;
 	}
 	write(1, "rb\n", 3);
-	count_ope++;
 }
-

@@ -1,20 +1,30 @@
-#include "../include/push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbaxmann <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/13 15:56:14 by mbaxmann          #+#    #+#             */
+/*   Updated: 2021/09/13 18:08:16 by mbaxmann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	count_ope = 0;
+#include "../include/push_swap.h"
 
 int	main(int ac, char **av)
 {
-	int *stack_A;
+	int	*stack_a;
 
 	if (ac < 2)
 		return (0);
-	else if ((int)(stack_A = ft_ps_init(ac, av)) > 1)
+	stack_a = ft_ps_init(ac, av);
+	if ((int)stack_a > 0)
 	{
-		//write(1, "success\n", 8);
-		ft_algo(stack_A);
+		ft_algo(stack_a);
 		return (0);
 	}
-	else if (stack_A == 0)
+	else if (stack_a == 0)
 	{
 		write(1, "Error\n", 6);
 		return (1);
