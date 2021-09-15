@@ -6,7 +6,7 @@
 /*   By: mbaxmann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 15:37:33 by mbaxmann          #+#    #+#             */
-/*   Updated: 2021/09/13 15:43:52 by mbaxmann         ###   ########.fr       */
+/*   Updated: 2021/09/13 18:46:19 by mbaxmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,6 @@ void	ft_algo(int *stack_a)
 		else
 			ft_sort_big(stack_a, stack_b);
 	}
+	free(stack_a);
+	free(stack_b);
 }

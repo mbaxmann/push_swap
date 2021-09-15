@@ -6,7 +6,7 @@
 /*   By: mbaxmann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 15:13:53 by mbaxmann          #+#    #+#             */
-/*   Updated: 2021/09/13 15:45:06 by mbaxmann         ###   ########.fr       */
+/*   Updated: 2021/09/13 18:53:05 by mbaxmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ int	ft_find_first(t_num *pack, int *stack_a, int chunk)
 				|| pos[j] == -1) && j < chunk)
 			j++;
 		if (j == chunk && pos[i] != -1)
+		{
+			free(pos);
 			return (i);
+		}
 		i++;
 		j = 0;
 	}

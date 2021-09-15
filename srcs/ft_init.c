@@ -6,7 +6,7 @@
 /*   By: mbaxmann <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 15:49:02 by mbaxmann          #+#    #+#             */
-/*   Updated: 2021/09/13 18:13:43 by mbaxmann         ###   ########.fr       */
+/*   Updated: 2021/09/14 14:29:25 by mbaxmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,10 @@ int	ft_get_num(int	*ret, int ac, char **str)
 			while (str[k][i] == ' ')
 				i++;
 			ret[j] = ft_atoi(str[k] + i);
-			if ((ret[j] == -1 || ret[j] == 0) && ft_strlen(str[k]) > 3)
-				return (-1);
 			if (str[k][i] == '-')
 				i++;
+			if ((ret[j] == -1 || ret[j] == 0) && ft_isdigit(str[k][i + 1]))
+				return (-1);
 			while (ft_isdigit(str[k][i]))
 				i++;
 			j++;
